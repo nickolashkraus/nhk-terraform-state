@@ -37,7 +37,7 @@ STACK_NAME=$(basename "$(pwd)")
 ```
 
 ```bash
-aws cloudformation create-stack \
+aws cloudformation deploy \
   --stack-name "${STACK_NAME}" \
-  --template-body file://template.yaml
+  --template template.yaml
 ```

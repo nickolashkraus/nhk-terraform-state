@@ -30,5 +30,8 @@ Resources:
         KeySchema:
           - AttributeName: 'LockId'
             KeyType: 'HASH'
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
         TableClass: STANDARD_INFREQUENT_ACCESS
         TableName: 'nhk-terraform-state'
