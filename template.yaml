@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: |
+  Amazon S3 bucket and DynamoDB table for storing Terraform state.
+
+Resources:
+
+    S3Bucket:
+      Type: AWS::S3::Bucket
+      DeletionPolicy: Retain
+      Properties:
+        # Owner gets FULL_CONTROL. No one else has access rights (default).
+        AccessControl: Private
+        BucketName: 'nhk-terraform-state'
+        # It is highly recommended that you enable Bucket Versioning on the S3
+        # bucket to allow for state recovery in the case of accidental
+        # deletions and human error.
+        VersioningConfiguration:
+          Status: Enabled
+
+    DynamoDBTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        # The table must have a partition key named LockID with type of String.
+        # If not configured, state locking will be disabled.
+        AttributeDefinitions:
+          - AttributeName: 'LockId'
+            AttributeType: 'S'
+        BillingMode: PROVISIONED
+        KeySchema:
+          - AttributeName: 'LockId'
+            KeyType: 'HASH'
+        TableClass: STANDARD_INFREQUENT_ACCESS
+        TableName: 'nhk-terraform-state'
