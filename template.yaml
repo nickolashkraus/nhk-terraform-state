@@ -24,11 +24,11 @@ Resources:
         # The table must have a partition key named LockID with type of String.
         # If not configured, state locking will be disabled.
         AttributeDefinitions:
-          - AttributeName: 'LockId'
+          - AttributeName: 'LockID'
             AttributeType: 'S'
         BillingMode: PROVISIONED
         KeySchema:
-          - AttributeName: 'LockId'
+          - AttributeName: 'LockID'
             KeyType: 'HASH'
         ProvisionedThroughput:
           ReadCapacityUnits: 1
