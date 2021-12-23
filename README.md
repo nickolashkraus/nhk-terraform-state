@@ -1,5 +1,7 @@
 # nhk-terraform-state
 
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/NickolasHKraus/nhk-terraform-state/blob/master/LICENSE)
+
 Amazon S3 bucket and DynamoDB table for storing Terraform state.
 
 ## Overview
