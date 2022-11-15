@@ -1,6 +1,6 @@
 # nhk-terraform-state
 
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/NickolasHKraus/static-website-com/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/nickolashkraus/static-website-com/blob/master/LICENSE)
 
 Amazon S3 bucket and DynamoDB table for storing Terraform state
 
